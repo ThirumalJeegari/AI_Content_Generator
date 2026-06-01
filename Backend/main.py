@@ -15,7 +15,7 @@ def home():
 
 
 
-@app.Post("/generate")
+@app.post("/generate")
 def generate(topic:str,technology:str,content:str,tone:str):
 
     prompt = f"""
@@ -25,7 +25,7 @@ def generate(topic:str,technology:str,content:str,tone:str):
 
     response = client.chat.completions.create(
         model = "llama-3.1-8b-instant",
-        message = [
+        messages = [
             {
                 "role" : "user",
                 "content":prompt
