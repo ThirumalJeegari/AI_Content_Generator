@@ -29,10 +29,10 @@ with st.form("Generate Blogs, LinkedIn Posts, Captions, Emails and many more"):
             response = requests.post(f"{server_url}/generate",params ={"topic":topic,"technology":technology,"content":content,"tone":tone})
 
             if response.status_code == 200:
-                data = response.json()
 
-            else:
-                st.error(data)
+                data = response.json()
+                st.success("Content Generated Successfully")
+                st.write(data["response"])
 
 
    
