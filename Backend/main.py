@@ -4,7 +4,7 @@ import os
 
 app = FastAPI()
 
-client =Groq(api_key = os.getenv("api_key"))
+client = Groq(api_key=os.getenv("api_key"))
 
 
 
