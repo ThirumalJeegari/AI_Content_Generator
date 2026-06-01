@@ -26,7 +26,7 @@ with st.form("Generate Blogs, LinkedIn Posts, Captions, Emails and many more"):
             st.spinner("Generating Content...")
 
 
-            response = requests.post(f"{server_url}/generate",details ={"topic":topic,"technology":technology,"content":content,"tone":tone})
+            response = requests.post(f"{server_url}/generate",params ={"topic":topic,"technology":technology,"content":content,"tone":tone})
 
             if response.status_code == 200:
                 data = response.json()
